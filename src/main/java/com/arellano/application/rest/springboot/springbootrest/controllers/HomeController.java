@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Consumer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.arellano.application.rest.springboot.springbootrest.entities.MultiplesProducts;
 import com.arellano.application.rest.springboot.springbootrest.entities.Product;
 import com.arellano.application.rest.springboot.springbootrest.services.ProductService;
 
@@ -43,6 +45,16 @@ public class HomeController {
 
         return ResponseEntity.notFound().build();
     }
+    
+
+    @PostMapping("/addProduct")
+    public ResponseEntity<?> addProduct(@RequestBody MultiplesProducts multiplesProducts){
+        multiplesProducts.getListProducts().forEach((product) -> {
+            productService.save(product);
+        });
+        return null;
+    }
+
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Product product){

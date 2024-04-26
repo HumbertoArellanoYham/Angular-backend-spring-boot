@@ -26,6 +26,8 @@ public class Product {
     @Column(name = "familia_olfativa")
     private String familiaOlfativa;
 
+    private String imagen;
+
     public Product() {
     }
 
@@ -99,6 +101,16 @@ public class Product {
 
     public void setFamiliaOlfativa(String familiaOlfativa) {
         this.familiaOlfativa = familiaOlfativa;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     
