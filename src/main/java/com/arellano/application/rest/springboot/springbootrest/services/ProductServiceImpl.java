@@ -3,6 +3,7 @@ package com.arellano.application.rest.springboot.springbootrest.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,11 +11,12 @@ import com.arellano.application.rest.springboot.springbootrest.entities.Product;
 import com.arellano.application.rest.springboot.springbootrest.repositories.ProductRepository;
 
 @Service
+@Qualifier("productService")
 public class ProductServiceImpl implements ProductService{
 
     private ProductRepository productRepository;
 
-    public ProductServiceImpl(ProductRepository productRepository) {
+    public ProductServiceImpl(@Qualifier("productRepository") ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

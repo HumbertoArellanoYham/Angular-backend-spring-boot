@@ -1,0 +1,66 @@
+{
+  "fecha": "2024-04-18",
+  "productos": [
+    {
+      "idproducto": 1,
+      "nombre": "Producto 1",
+      "marca": "Marca 1",
+      "volumen": 10.5,
+      "precio": 100,
+      "existencia": 20,
+      "stock_max": 50,
+      "stock_min": 10,
+      "cantidad": 3,
+      "importe": 300
+    },
+    {
+      "idproducto": 2,
+      "nombre": "Producto 2",
+      "marca": "Marca 2",
+      "volumen": 7.2,
+      "precio": 85,
+      "existencia": 15,
+      "stock_max": 30,
+      "stock_min": 5,
+      "cantidad": 2,
+      "importe": 170
+    },
+    {
+      "idproducto": 3,
+      "nombre": "Producto 3",
+      "marca": "Marca 3",
+      "volumen": 15.0,
+      "precio": 200,
+      "existencia": 30,
+      "stock_max": 60,
+      "stock_min": 15,
+      "cantidad": 1,
+      "importe": 200
+    },
+    {
+      "idproducto": 4,
+      "nombre": "Producto 4",
+      "marca": "Marca 4",
+      "volumen": 5.5,
+      "precio": 75,
+      "existencia": 25,
+      "stock_max": 40,
+      "stock_min": 8,
+      "cantidad": 4,
+      "importe": 300
+    },
+    {
+      "idproducto": 5,
+      "nombre": "Producto 5",
+      "marca": "Marca 5",
+      "volumen": 8.0,
+      "precio": 120,
+      "existencia": 18,
+      "stock_max": 35,
+      "stock_min": 12,
+      "cantidad": 2,
+      "importe": 240
+    }
+  ],
+  "total": 1210
+}
