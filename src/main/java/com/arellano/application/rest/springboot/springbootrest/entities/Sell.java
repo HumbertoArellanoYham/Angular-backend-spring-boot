@@ -1,5 +1,7 @@
 package com.arellano.application.rest.springboot.springbootrest.entities;
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Column;
@@ -12,7 +14,7 @@ import jakarta.persistence.Table;
 @Component
 @Entity
 @Table(name = "ventas")
-public class Sell {
+public class Sell implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

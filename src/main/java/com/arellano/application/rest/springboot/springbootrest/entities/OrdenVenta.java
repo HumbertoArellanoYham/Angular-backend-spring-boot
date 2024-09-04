@@ -1,5 +1,6 @@
 package com.arellano.application.rest.springboot.springbootrest.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OrdenVenta {
+public class OrdenVenta implements Serializable {
     @Autowired
     private Sell sell;
 

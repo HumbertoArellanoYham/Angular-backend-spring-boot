@@ -1,6 +1,8 @@
 package com.arellano.application.rest.springboot.springbootrest.entities;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable{
     private Product product; 
     private int quantity;
 

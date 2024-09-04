@@ -35,7 +35,7 @@ public class HomeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> view(@PathVariable Long id) {
+    public ResponseEntity<Product> view(@PathVariable Long id) {
         Optional<Product> productFound = productService.findById(id);
 
         if(productFound.isPresent()){
@@ -46,6 +46,7 @@ public class HomeController {
     }
     
 
+    // Agregar multiples productos en formato json a la vez
     @PostMapping("/addProduct")
     public ResponseEntity<?> addProduct(@RequestBody MultiplesProducts multiplesProducts){
         multiplesProducts.getListProducts().forEach((product) -> {
@@ -55,6 +56,7 @@ public class HomeController {
     }
 
 
+    // Agregar un solo producto
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Product product){
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.save(product));

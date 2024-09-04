@@ -1,5 +1,7 @@
 package com.arellano.application.rest.springboot.springbootrest.entities;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,10 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+// @RedisHash(value = "Product")
 @Table(name = "producto")
-public class Product {
+public class Product implements Serializable {
 
-    @Id
+    // @Indexed // For faster retrieve
+    @Id // Represent a primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idproducto;
     
@@ -107,11 +111,15 @@ public class Product {
         return imagen;
     }
 
-
-
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Product [idproducto=" + idproducto + ", nombre=" + nombre + ", marca=" + marca + ", volumen=" + volumen
+                + ", precio=" + precio + ", existencia=" + existencia + ", stock_max=" + stock_max + ", stock_min="
+                + stock_min + ", familiaOlfativa=" + familiaOlfativa + ", imagen=" + imagen + "]";
+    }
+
 }
