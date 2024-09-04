@@ -9,3 +9,4 @@ Operaciones:
   * Eliminar
   * Mostrar
 
+Redis esta implementado en un servicio de aws llamado ElastiCache para el uso de computo en la nube.
